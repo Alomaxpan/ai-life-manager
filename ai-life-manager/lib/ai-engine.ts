@@ -99,7 +99,7 @@ export function generateDailySchedule(
   tasks: Task[],
   energyByPeriod: Record<string, EnergyLevel>
 ): Array<{ time: string; task: Task | null; type: string; label: string }> {
-  const schedule = [];
+  const schedule: Array<{ time: string; task: Task | null; type: string; label: string }> = [];
   const morning = tasks.filter(
     (t) => t.status !== "completed" && t.energyRequired === (energyByPeriod.morning || "high")
   ).slice(0, 2);
